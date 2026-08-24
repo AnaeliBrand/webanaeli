@@ -519,9 +519,8 @@ section{ padding:120px 0; position:relative; }
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© <span id="year"></span> Anaelí Brand. Todos los derechos reservados.</span>
-      <span>Diseño &amp; desarrollo, <a href="https://www.instagram.com/anaeli.brand/" target="_blank" rel="noopener" style="text-decoration:underline;">Anaelí Brand Studio</a></span>
+    <div class="footer-bottom" style="justify-content:center;">
+      <span>© <span id="year"></span> Diseño &amp; desarrollo, <a href="https://www.instagram.com/anaeli.brand/" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">Anaelí Brand Studio</a></span>
     </div>
   </div>
 </footer>
@@ -542,6 +541,20 @@ if (nav) {
   const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
+}
+
+/* ---------- Animación de aparición al hacer scroll ---------- */
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger');
+if (revealEls.length) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => observer.observe(el));
 }
 </script>
 </body>
