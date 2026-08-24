@@ -886,7 +886,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function slugify(str) {
   return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '');
 }
-fetch('data/portfolio.json')
+fetch('data/portfolio.json?v=' + Date.now())
   .then(res => res.json())
   .then(data => {
     const html = data.marcas.map(m => `

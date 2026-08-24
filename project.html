@@ -807,7 +807,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const wantedSlug = params.get('album') || '';
 
-    fetch('data/portfolio.json')
+    fetch('data/portfolio.json?v=' + Date.now())
       .then(res => res.json())
       .then(data => {
         const marca = data.marcas.find(m => slugify(m.nombre) === wantedSlug) || data.marcas[0];
