@@ -7,7 +7,8 @@
 <title>Política de privacidad — Anaelí Brand</title>
 <meta name="description" content="Cómo Anaelí Brand recopila y usa tu información al cotizar un proyecto o enviar un comprobante de pago.">
 <meta name="robots" content="noindex">
-<link rel="icon" href="assets/favicon.png"><!-- PLACEHOLDER -->
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
 <style>
 /* ============================================================
    ANAELÍ BRAND — Design System
@@ -458,40 +459,54 @@ section{ padding:120px 0; position:relative; }
   <button class="nav-burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
 </header>
 
-<section class="page-header" style="padding-bottom:20px;">
+<section class="page-header" style="padding-bottom:20px; text-align:center;">
   <div class="wrap">
-    <span class="eyebrow reveal is-visible">Legal</span>
-    <h1 class="reveal is-visible">Política de privacidad.</h1>
-    <p class="reveal is-visible">Cómo usamos la información que nos compartes al cotizar un proyecto o confirmar un pago.</p>
+    <span class="eyebrow reveal is-visible" style="justify-content:center;">Legal</span>
+    <h1 class="reveal is-visible" style="margin:0 auto; max-width:16ch;">Política de privacidad.</h1>
+    <p class="reveal is-visible" style="margin:20px auto 0;">Cómo usamos la información que nos compartes al cotizar un proyecto o confirmar un pago.</p>
   </div>
 </section>
 
-<section style="padding-top:0;">
-  <div class="wrap" style="max-width:720px;">
-    <div class="reveal" style="display:flex; flex-direction:column; gap:36px;">
-      <div>
-        <h3 style="font-size:22px; margin-bottom:10px;">Qué datos recopilamos</h3>
+<section style="padding-top:20px;">
+  <div class="wrap" style="max-width:980px;">
+    <div class="privacy-grid reveal stagger">
+      <div class="privacy-card" style="background:var(--lavender);">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--plum)" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/><path d="M4 12V7a2 2 0 0 1 2-2h9"/><path d="M14 3h6v6"/></svg>
+        <h3>Qué datos recopilamos</h3>
         <p>Cuando cotizas un proyecto o envías un comprobante de pago, te pedimos nombre completo, WhatsApp, correo electrónico, y en algunos casos una imagen de tu comprobante de transferencia. Estos datos se usan únicamente para darte seguimiento a tu cotización o confirmar tu pago.</p>
       </div>
-      <div>
-        <h3 style="font-size:22px; margin-bottom:10px;">Sobre tus datos</h3>
+      <div class="privacy-card" style="background:var(--olive-soft);">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--plum)" stroke-width="1.6"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <h3>Sobre tus datos</h3>
         <p>Usamos tu información solo para responder tu solicitud y coordinar tu proyecto. No la compartimos con terceros.</p>
       </div>
-      <div>
-        <h3 style="font-size:22px; margin-bottom:10px;">Sobre los pagos</h3>
+      <div class="privacy-card" style="background:var(--yellow-pastel);">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--plum)" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        <h3>Sobre los pagos</h3>
         <p>Anaelí Brand no procesa ni almacena números de tarjeta de crédito o débito.</p>
       </div>
-      <div>
-        <h3 style="font-size:22px; margin-bottom:10px;">Cookies</h3>
+      <div class="privacy-card" style="background:var(--lavender);">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--plum)" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="var(--plum)"/><circle cx="14" cy="8" r="1" fill="var(--plum)"/><circle cx="15" cy="14" r="1" fill="var(--plum)"/><circle cx="10" cy="15" r="1" fill="var(--plum)"/></svg>
+        <h3>Cookies</h3>
         <p>Podemos usar cookies o herramientas similares para que el sitio funcione correctamente y para mejorar tu experiencia de navegación.</p>
       </div>
-      <div>
-        <h3 style="font-size:22px; margin-bottom:10px;">Contacto</h3>
+      <div class="privacy-card" style="background:var(--olive-soft); grid-column:1 / -1;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--plum)" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <h3>Contacto</h3>
         <p>Si tienes preguntas sobre tus datos, puedes escribirnos a <a href="mailto:hola@anaelidesign.com" style="color:var(--plum); font-weight:600;">hola@anaelidesign.com</a>.</p>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+.privacy-grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+@media (max-width:700px){ .privacy-grid{ grid-template-columns:1fr; } }
+.privacy-card{ border-radius:var(--radius-l); padding:32px; }
+.privacy-card svg{ margin-bottom:16px; }
+.privacy-card h3{ font-size:20px; margin-bottom:10px; }
+.privacy-card p{ font-size:15px; color:var(--ink-soft); }
+</style>
 
 <footer class="footer">
   <div class="wrap">
