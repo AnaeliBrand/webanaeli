@@ -497,7 +497,7 @@ section{ padding:120px 0; position:relative; }
       </span>
       <span class="line2">que no se olvidan.</span>
     </h1>
-    <p class="hero-sub reveal is-visible">Estudio de diseño, branding & content. Creatividad y estrategia para marcas sólidas, diferenciadas y memorables.</p>
+    <p class="hero-sub reveal is-visible" id="heroSubtitulo">Estudio de diseño, branding & content. Creatividad y estrategia para marcas sólidas, diferenciadas y memorables.</p>
     <div class="hero-actions reveal is-visible">
       <button type="button" class="btn btn-primary js-quote-btn" data-package="Cotización general">Cotiza tu proyecto</button>
       <a href="work.html" class="btn btn-ghost">Ver portafolio</a>
@@ -512,7 +512,7 @@ section{ padding:120px 0; position:relative; }
 
 <section class="statement-band" style="padding:90px 0;">
   <div class="wrap">
-    <p class="statement-text reveal">Aquí se piensan, diseñan y construyen <em>marcas completas, sofisticadas</em> y con estilo, no solo logos.</p>
+    <p class="statement-text reveal" id="declaracionText">Aquí se piensan, diseñan y construyen <em>marcas completas, sofisticadas</em> y con estilo, no solo logos.</p>
   </div>
 </section>
 
@@ -533,10 +533,10 @@ section{ padding:120px 0; position:relative; }
     </div>
     <div class="about-copy reveal-right">
       <span class="eyebrow">El estudio</span>
-      <p class="lede" style="margin-top:20px;">Desde mucho antes de que el marketing se volviera tendencia, ya me fascinaba entender cómo conectar marcas con personas.</p>
+      <p class="lede" style="margin-top:20px;" id="estudioP1">Desde mucho antes de que el marketing se volviera tendencia, ya me fascinaba entender cómo conectar marcas con personas.</p>
       <p>Soy Ingeniera en Marketing, especialista en branding desde hace 10 años, y Máster en Estrategias Digitales. Después de más de una década en la industria, he tenido el privilegio de ayudar a cientos de marcas alrededor del mundo a encontrar su voz y crecer con intención.</p>
       <p>Conozco de cerca las necesidades de un emprendedor cuando habla de marketing y diseño, por eso entiendo a profundidad lo que necesita una marca para despegar en el mundo digital, utilizando creatividad con estrategia.</p>
-      <p style="margin-top:18px;"><strong style="color:var(--olive-deep);">Nuestra misión</strong> es crear marcas excepcionales que combinen profesionalismo con una creatividad sin límites, para que tu marca no solo sea visualmente atractiva, sino significativa y auténtica.</p>
+      <p style="margin-top:18px;"><strong style="color:var(--olive-deep);">Nuestra misión</strong> <span id="estudioMision">es crear marcas excepcionales que combinen profesionalismo con una creatividad sin límites, para que tu marca no solo sea visualmente atractiva, sino significativa y auténtica.</span></p>
       <a href="contact.html" class="btn btn-ghost" style="margin-top:30px;">Conoce cómo trabajamos</a>
     </div>
   </div>
@@ -925,8 +925,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------- HERO: palabra rotativa dentro de la frase ---------- */
-  const rotator = document.querySelector('.hero-rotator');
-  if (rotator) {
+  function startRotator() {
+    const rotator = document.querySelector('.hero-rotator');
+    if (!rotator) return;
     const words = rotator.querySelectorAll('.word');
     let i = 0;
     if (words.length > 1) {
@@ -937,6 +938,30 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 1600);
     }
   }
+
+  /* ---------- Textos generales del sitio: se cargan desde data/site-texts.json ---------- */
+  fetch('data/site-texts.json')
+    .then(res => res.json())
+    .then(t => {
+      const rotator = document.querySelector('#heroRotator');
+      if (rotator && Array.isArray(t.hero_palabras) && t.hero_palabras.length) {
+        rotator.innerHTML = t.hero_palabras.map((w, idx) =>
+          `<span class="word${idx === 0 ? ' active' : ''}">${w}</span>`
+        ).join('');
+      }
+      const map = {
+        heroSubtitulo: t.hero_subtitulo,
+        declaracionText: t.declaracion,
+        estudioP1: t.estudio_p1,
+        estudioMision: t.estudio_mision,
+      };
+      Object.keys(map).forEach(id => {
+        const el = document.getElementById(id);
+        if (el && map[id]) el.textContent = map[id];
+      });
+    })
+    .catch(err => console.error('No se pudieron cargar los textos del sitio:', err))
+    .finally(startRotator);
 
   /* ---------- REVEAL al hacer scroll (fade + laterales + cascada) ---------- */
   const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger');
