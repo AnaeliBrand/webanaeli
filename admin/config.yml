@@ -2,8 +2,8 @@ backend:
   name: github
   repo: AnaeliBrand/webanaeli
   branch: main
-  base_url: https://anaelidesign.com
-  auth_endpoint: api/auth
+  base_url: https://anaeli-admin-auth.hola-264.workers.dev
+  auth_endpoint: auth
 
 media_folder: "assets/uploads"
 public_folder: "assets/uploads"
