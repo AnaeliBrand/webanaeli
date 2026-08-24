@@ -77,6 +77,12 @@
         "assets/portfolio/sincaption/5.jpg",
         "assets/portfolio/sincaption/6.jpg"
       ]
+    },
+    {
+      "nombre": "MARCA DE PRUEBA",
+      "portada": "assets/uploads/chatgpt-image-13-ago-2026-04_18_51-a.m..png",
+      "eslogan": "PRUER",
+      "palabra_fondo": "EFDWEJ"
     }
   ]
 }
