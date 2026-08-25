@@ -727,6 +727,44 @@ section{ padding:120px 0; position:relative; }
   </div>
 </section>
 
+<!-- ============================== HEY TAPP ============================== -->
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="reveal heytapp-card">
+      <div class="heytapp-card-text">
+        <span class="heytapp-eyebrow">Esto te podría interesar</span>
+        <h2>¿Tienes un negocio? Conoce Hey Tapp.</h2>
+        <p>Tarjetas de fidelización digitales para que tus clientes acumulen sellos y vuelvan por más.</p>
+        <a href="https://www.heytapp.com" target="_blank" rel="noopener" class="heytapp-btn">
+          Visitar Hey Tapp
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <img src="assets/heytapp-logo.png" alt="Hey Tapp" class="heytapp-logo">
+    </div>
+  </div>
+</section>
+
+<style>
+.heytapp-card{
+  background: var(--olive);
+  border-radius:var(--radius-l);
+  padding:60px 50px; display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;
+}
+.heytapp-card-text{ max-width:480px; }
+.heytapp-eyebrow{ display:inline-block; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--plum); margin-bottom:14px; }
+.heytapp-card h2{ color:var(--ink); font-size:clamp(26px,3.4vw,36px); max-width:16ch; font-family:var(--font-display); }
+.heytapp-card p{ color:var(--ink-soft); max-width:44ch; margin-top:14px; font-size:15.5px; }
+.heytapp-btn{
+  display:inline-flex; align-items:center; gap:9px; margin-top:26px;
+  background:var(--ink); color:var(--cream) !important; padding:14px 28px; border-radius:100px; font-weight:600; font-size:14.5px;
+  transition:transform .3s var(--ease), background .3s var(--ease);
+}
+.heytapp-btn:hover{ transform:translateY(-2px); }
+.heytapp-logo{ flex:none; width:220px; height:auto; }
+@media (max-width:600px){ .heytapp-card{ padding:40px 28px; justify-content:center; text-align:center; } .heytapp-card-text{ max-width:100%; } .heytapp-logo{ width:160px; } }
+</style>
+
 <!-- ============================== FOOTER ============================== -->
 <footer class="footer">
   <div class="wrap">
@@ -744,6 +782,7 @@ section{ padding:120px 0; position:relative; }
           <!-- <li><a href="/resources">Recursos</a></li> -->
           <li><a href="/#proceso">Proceso</a></li>
           <li><a href="/contact#faq">FAQ</a></li>
+          <li><a href="https://www.heytapp.com" target="_blank" rel="noopener">Tarjeta de fidelización</a></li>
         </ul>
       </div>
       <div>
