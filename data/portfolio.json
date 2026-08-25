@@ -77,6 +77,15 @@
         "assets/portfolio/sincaption/5.jpg",
         "assets/portfolio/sincaption/6.jpg"
       ]
+    },
+    {
+      "nombre": "RCC Consultores",
+      "palabra_fondo": "CREDIBILIDAD",
+      "portada": "assets/uploads/chatgpt-image-13-ago-2026-04_30_57-a.m..png",
+      "fotos": [
+        "assets/uploads/chatgpt-image-13-ago-2026-04_15_39-a.m..png",
+        "assets/uploads/chatgpt-image-13-ago-2026-04_38_45-a.m..png"
+      ]
     }
   ]
 }
