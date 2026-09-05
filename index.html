@@ -640,15 +640,15 @@ section{ padding:120px 0; position:relative; }
 <!-- ============================== PORTAFOLIO PREVIEW ============================== -->
 <section>
   <div class="wrap">
-    <div class="section-head reveal" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px; max-width:none;">
-      <div>
-        <span class="eyebrow">Trabajo seleccionado</span>
-        <h2>Marcas que ya viven su identidad.</h2>
-      </div>
-      <a href="/work" class="btn btn-ghost">Ver portafolio completo</a>
+    <div class="section-head reveal">
+      <span class="eyebrow">Trabajo seleccionado</span>
+      <h2>Marcas que ya viven su identidad.</h2>
     </div>
     <div class="work-grid-big reveal stagger" id="portfolioGridContainer">
       <p style="text-align:center; color:var(--ink-soft); padding:40px 0;">Cargando portafolio…</p>
+    </div>
+    <div style="text-align:center; margin-top:36px;">
+      <a href="/work" class="btn btn-ghost">Ver portafolio completo</a>
     </div>
   </div>
 </section>
@@ -1157,7 +1157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('data/portfolio.json?v=' + Date.now())
       .then(res => res.json())
       .then(data => {
-        const preview = data.marcas.slice(0, 6); // el Home solo muestra hasta 6 — el resto vive en /work
+        const preview = data.marcas.slice(0, 7); // el Home solo muestra hasta 7 — el resto vive en /work
         const html = preview.map(m => `
           <a href="/project?album=${slugifyHome(m.nombre)}" class="work-card-big">
             <img src="${m.portada}" alt="Proyecto ${m.nombre}">
