@@ -1157,7 +1157,8 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('data/portfolio.json?v=' + Date.now())
       .then(res => res.json())
       .then(data => {
-        const html = data.marcas.map(m => `
+        const preview = data.marcas.slice(0, 6); // el Home solo muestra hasta 6 — el resto vive en /work
+        const html = preview.map(m => `
           <a href="/project?album=${slugifyHome(m.nombre)}" class="work-card-big">
             <img src="${m.portada}" alt="Proyecto ${m.nombre}">
             <span class="view-hint">Ver más</span>
